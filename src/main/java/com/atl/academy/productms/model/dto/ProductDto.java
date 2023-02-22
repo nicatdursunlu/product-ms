@@ -26,4 +26,7 @@ public class ProductDto {
 
     @ApiModelProperty(value = "Product's price", required = true)
     private BigDecimal price;
+
+    @ApiModelProperty(value = "Product's price", required = true)
+    private BigDecimal price12;
 }
