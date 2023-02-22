@@ -35,7 +35,7 @@ public class ProductController {
     }
 
     @PostMapping
-    @ApiOperation(value = "Add Product")
+    @ApiOperation(value = "Add Product 12345")
     public ResponseEntity<String> createProduct(@RequestBody ProductRequest productRequest) {
         productService.createProduct(productRequest);
         return new ResponseEntity<>("Product was added successfully!", HttpStatus.CREATED);
@@ -48,4 +48,13 @@ public class ProductController {
             @RequestParam @ApiParam(name = "count", value = "Product count", example = "5") Long count) {
         productService.decreaseProductCount(id, count);
     }
+
+    @PatchMapping("/{id}/decrease-count123")
+    @ApiOperation(value = "Decrease Product Count")
+    public void decreaseProductCount123(
+            @PathVariable @ApiParam(name = "id", value = "Product id", example = "2") Long id,
+            @RequestParam @ApiParam(name = "count", value = "Product count", example = "5") Long count) {
+        productService.decreaseProductCount(id, count);
+    }
+
 }
